@@ -80,4 +80,4 @@ def run_serve(app, loop):  # pragma: no cover
     log.debug("stopping serve")
     server.close()
     loop.run_until_complete(server.wait_closed())
-    loop.run_until_complete(handler.finish_connections(5.0))
+    loop.run_until_complete(handler.shutdown(5.0))
